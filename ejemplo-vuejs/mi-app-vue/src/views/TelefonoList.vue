@@ -16,7 +16,7 @@
         <tr v-for="telefono in telefonos" :key="telefono.url">
           <td>{{ telefono.telefono }}</td>
           <td>{{ telefono.tipo }}</td>
-          <td>{{ telefono.estudiante }}</td>
+          <td>{{ telefono.estudiante_nombre }}</td>
           <td>
             <router-link
               :to="{
@@ -53,7 +53,22 @@ export default {
     async fetchTelefonos() {
       try {
         const response = await api.get("/numerosts/");
-        this.telefonos = response.data.results || response.data;
+        const telefonosData = response.data.results || response.data;
+
+        // Mapea cada teléfono para agregarle el nombre del estudiante
+        const telefonosConNombre = await Promise.all(
+          telefonosData.map(async (t) => {
+            try {
+              const estudianteRes = await api.get(t.estudiante);
+              t.estudiante_nombre = `${estudianteRes.data.nombre} ${estudianteRes.data.apellido}`;
+            } catch {
+              t.estudiante_nombre = "No disponible";
+            }
+            return t;
+          })
+        );
+
+        this.telefonos = telefonosConNombre;
       } catch (err) {
         this.error = "Error al cargar teléfonos.";
       } finally {
