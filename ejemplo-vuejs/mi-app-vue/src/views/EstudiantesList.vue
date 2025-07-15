@@ -174,7 +174,6 @@ ul {
     var(--primary-color),
     var(--secondary-color)
   );
-  color: white;
   border-radius: 12px;
   text-decoration: none;
   text-align: center;
@@ -192,7 +191,7 @@ ul {
   );
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
-  color: white;
+  color: rgba(62, 8, 45, 0.89);
   text-decoration: none;
 }
 

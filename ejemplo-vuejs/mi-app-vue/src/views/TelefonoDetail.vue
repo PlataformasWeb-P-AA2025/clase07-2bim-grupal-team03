@@ -8,8 +8,6 @@
       <input v-model="telefono.telefono" type="text" />
       <label>Tipo:</label>
       <input v-model="telefono.tipo" type="text" />
-      <label>ID Estudiante:</label>
-      <input v-model="telefono.estudiante" type="text" />
       <button type="submit">Guardar</button>
     </form>
     <router-link to="/telefonos" class="back-button"
