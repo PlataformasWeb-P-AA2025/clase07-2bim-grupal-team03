@@ -30,6 +30,9 @@
         </tr>
       </tbody>
     </table>
+    <router-link :to="{ name: 'TelefonoAgregar' }" class="add-button">
+      Agregar Nuevo Teléfono
+    </router-link>
     <router-link to="/" class="back-button">Volver al inicio</router-link>
   </div>
 </template>
@@ -105,6 +108,23 @@ th,
 td {
   padding: 10px;
   border-bottom: 1px solid #ccc;
+}
+
+.add-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #218838;
 }
 
 .back-button {

@@ -5,10 +5,19 @@ import EstudiantesList from "../views/EstudiantesList.vue"; // Tu nuevo componen
 import EstudianteDetail from "../views/EstudianteDetail.vue"; // ¡Importa el nuevo componente!
 import TelefonoList from "../views/TelefonoList.vue";
 import TelefonoDetail from "../views/TelefonoDetail.vue";
+<<<<<<< HEAD
+import TelefonoAg from "@/views/TelefonoAg.vue";
+=======
 import EstudianteEditar from "../views/EstudianteEditar.vue";
 import EstudianteCrear from "../views/EstudianteCrear.vue";
+>>>>>>> 65397a3596b3edca8fca7e9a209684308262aa4a
 
 const routes = [
+  {
+    path: "/telefonos/nuevo",
+    name: "TelefonoAgregar",
+    component: TelefonoAg,
+  },
   {
     path: "/",
     name: "home",
