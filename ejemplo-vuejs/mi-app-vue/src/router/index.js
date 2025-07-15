@@ -5,6 +5,8 @@ import EstudiantesList from "../views/EstudiantesList.vue"; // Tu nuevo componen
 import EstudianteDetail from "../views/EstudianteDetail.vue"; // ¡Importa el nuevo componente!
 import TelefonoList from "../views/TelefonoList.vue";
 import TelefonoDetail from "../views/TelefonoDetail.vue";
+import EstudianteEditar from "../views/EstudianteEditar.vue";
+import EstudianteCrear from "../views/EstudianteCrear.vue";
 
 const routes = [
   {
@@ -36,6 +38,19 @@ const routes = [
     name: "TelefonoDetail",
     component: TelefonoDetail,
     props: true,
+  },
+  {
+    path: "/estudiantes/editar/:estudianteUrl",
+    name: "EstudianteEditar",
+    component: EstudianteEditar,
+    props: true,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/estudiantes/nuevo",
+    name: "EstudianteCrear",
+    component: EstudianteCrear,
+    meta: { requiresAuth: true },
   },
 ];
 
