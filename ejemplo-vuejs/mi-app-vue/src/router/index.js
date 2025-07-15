@@ -5,8 +5,14 @@ import EstudiantesList from "../views/EstudiantesList.vue"; // Tu nuevo componen
 import EstudianteDetail from "../views/EstudianteDetail.vue"; // ¡Importa el nuevo componente!
 import TelefonoList from "../views/TelefonoList.vue";
 import TelefonoDetail from "../views/TelefonoDetail.vue";
+import TelefonoAg from "@/views/TelefonoAg.vue";
 
 const routes = [
+  {
+    path: "/telefonos/nuevo",
+    name: "TelefonoAgregar",
+    component: TelefonoAg,
+  },
   {
     path: "/",
     name: "home",
